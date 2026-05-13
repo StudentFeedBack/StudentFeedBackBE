@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/student_feedback?createDatabaseIfNotExist=true
+    username: root
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: 86400000
+
+openai:
+  api-key: ${OPENAI_API_KEY}
+  model: gpt-3.5-turbo
+
+google:
+  cloud:
+    vision:
+      credentials:
+        location: ${GOOGLE_APPLICATION_CREDENTIALS}
+
+logging:
+  level:
+    com.example.studentfeedback: DEBUG
